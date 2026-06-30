@@ -1,0 +1,16 @@
+{
+  "name": "e-commmerce-app_rest_api",
+  "version": "1.0.0",
+  "description": "e-commerce app with rest api ",
+  "license": "ISC",
+  "author": "abhinav",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
