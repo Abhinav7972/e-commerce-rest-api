@@ -1,8 +1,16 @@
 //import express
 import express from 'express'
+import * as ProductRouter from './src/features/product/controllers/product.routes';
+
+
 
 //create server
 const server = new express();
+
+
+// for all request related to product, redirect to product routes
+//localhost:3200/api
+server.use('/api/product',ProductRouter)
 
 // create request handlers
 server.get('/',(req,res)=> res.send('welcome to e-commerce api'))
