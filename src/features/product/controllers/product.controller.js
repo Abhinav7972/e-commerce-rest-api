@@ -3,7 +3,7 @@ export default class ProductController
 
     getAllProduct(req,res){}
     
-    addProdcut(req,res) {}
+    addProduct(req,res) {}
 
     rateProduct(req,res) {}
 
