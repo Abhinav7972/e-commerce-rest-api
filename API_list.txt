@@ -1,0 +1,9 @@
+
+---Product-controller APIS---
+
+Product
+Get Products
+Add a Product
+Get one product
+rate a product
+
