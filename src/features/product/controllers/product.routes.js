@@ -13,8 +13,8 @@ const productController = new ProductController()
 
 //3. all paths to controller methods
 router.get('/',productController.getAllProduct);
-router.post('/',
-    upload.single('imageURL'),
-    productController.addProduct)
+router.get('/filter',productController.filerProduct)
+router.get('/:id',productController.getOneProduct)
+router.post('/',upload.single('imageURL'), productController.addProduct)
 
 export default router;
