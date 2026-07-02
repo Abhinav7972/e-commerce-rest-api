@@ -1,6 +1,6 @@
 //import express
 import express from 'express'
-import * as ProductRouter from './src/features/product/controllers/product.routes';
+import ProductRouter from './src/features/product/controllers/product.routes.js';
 
 
 
