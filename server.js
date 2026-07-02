@@ -14,6 +14,8 @@ server.use(bodyParser.json())
 //localhost:3200/api
 server.use('/api/product',ProductRouter)
 
+server.use('/uploads', express.static('uploads'));
+
 // create request handlers
 server.get('/',(req,res)=> res.send('welcome to e-commerce api'))
 
