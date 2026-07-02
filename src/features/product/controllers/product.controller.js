@@ -27,7 +27,29 @@ export default class ProductController
 
     rateProduct(req,res) {}
 
-    getOneProduct(req,res) {}
+    getOneProduct(req,res) {
+        const id = req.params.id;
+        const product = ProductModel.get(id);
+        if(!product)
+        {
+            res.status(404).send('product not found')
+        }
+        else
+        {
+          res.status(200).send(product)
+        }
+    }
+
+
+    filerProduct(req,res)
+    {
+        //extract values from query params
+        const minPrice = req.query.minPrice;
+        const maxPrice = req.query.maxPrice;
+        const category = req.query.category;
+        const result = ProductModel.filter(minPrice,maxPrice,category)
+        res.status(200).send(result)
+    }
 
 
 }
