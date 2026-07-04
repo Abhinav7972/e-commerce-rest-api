@@ -1,11 +1,14 @@
 //import express
 import express from 'express'
 import ProductRouter from './src/features/product/controllers/product.routes.js';
+import UserRouter  from './src/features/user/user.route.js'
 import bodyParser from 'body-parser'
 
 
 //create server
 const server = new express();
+
+server.use(express.json())
 
 //body  parser middleware
 server.use(bodyParser.json())
@@ -14,7 +17,12 @@ server.use(bodyParser.json())
 //localhost:3200/api
 server.use('/api/product',ProductRouter)
 
+//redirect request related to user routes
+server.use('/api/users',UserRouter)
+
+
 server.use('/uploads', express.static('uploads'));
+
 
 // create request handlers
 server.get('/',(req,res)=> res.send('welcome to e-commerce api'))
