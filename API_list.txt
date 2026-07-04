@@ -1,9 +1,15 @@
 
 ---Product-controller APIS---
 
-Product
-Get Products
-Add a Product
-Get one product
-rate a product
+Product  - done
+Get Products  - done 
+Add a Product - done 
+Get one product  - done 
+filter product - done
+
+
+
+--user controller api ---
+Sign up - Email,name, password, TypeOfUSer(customer,seller)
+sing in - (Email,password)
 
