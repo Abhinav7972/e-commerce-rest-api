@@ -3,7 +3,7 @@ import express from 'express'
 import ProductRouter from './src/features/product/controllers/product.routes.js';
 import UserRouter  from './src/features/user/user.route.js'
 import bodyParser from 'body-parser'
-
+import basicAuthoriser from './src/features/middlewares/basicAuth.middleware.js';
 
 //create server
 const server = new express();
@@ -15,7 +15,7 @@ server.use(bodyParser.json())
 
 // for all request related to product, redirect to product routes
 //localhost:3200/api
-server.use('/api/product',ProductRouter)
+server.use('/api/product', basicAuthoriser,ProductRouter)
 
 //redirect request related to user routes
 server.use('/api/users',UserRouter)
