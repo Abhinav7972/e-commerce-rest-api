@@ -1,0 +1,41 @@
+let users = [
+    {
+        name: "seller king",
+        email: "salesking@gmail.com",
+        password: 1234,
+        type: "seller"
+    }
+];
+
+
+
+
+export default class UserModel
+{
+    constructor(name,email,password,type,id)
+    {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.type = type;
+        this.id = id;
+    }
+
+
+    static signUP(name,email,password,type)
+    {
+        const newUser = new UserModel(name,email,password,type);
+        newUser.id = users.length+1;
+        users.push(newUser);
+        return newUser;
+    }
+
+    static signIN(email,password)
+    {
+        const user = users.find((user)=> user.email ==email && user.password ==password)
+
+        return user;
+    }
+}
+
+
