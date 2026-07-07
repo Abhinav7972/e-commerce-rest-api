@@ -17,4 +17,6 @@ router.get('/filter',productController.filerProduct)
 router.get('/:id',productController.getOneProduct)
 router.post('/',upload.single('imageURL'), productController.addProduct)
 
+router.post('/rate',productController.rateProduct)
+
 export default router;
