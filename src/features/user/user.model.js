@@ -1,5 +1,6 @@
 let users = [
     {
+        id : 1,
         name: "seller king",
         email: "salesking@gmail.com",
         password: 1234,
@@ -41,6 +42,9 @@ export default class UserModel
     {
         return users;
     }
+
+
+   
 }
 
 
