@@ -7,7 +7,7 @@ export const jwtAuth = (req,res,next) =>{
     //if no token error
      if(!token)
      {
-        res.status(401).send('unauthorised access')
+        return res.status(401).send('unauthorised access')
      }
 
     //check if token is valid 
