@@ -14,6 +14,7 @@ export const jwtAuth = (req,res,next) =>{
     try 
     {
     const payload = jwt.verify(token,"SOtTZG4qtMbgsw1e1aTBNAoNEA/JNUhAAPJHIXQPCCs=");
+    req.userID = payload.userID;
     console.log(payload)
     }
     catch(err)
