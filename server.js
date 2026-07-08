@@ -2,9 +2,11 @@
 import express from 'express'
 import ProductRouter from './src/features/product/controllers/product.routes.js';
 import UserRouter  from './src/features/user/user.route.js'
+import CartRouter  from  './src/features/cartItems/cartItem.route.js'
 import bodyParser from 'body-parser'
 import basicAuthoriser from './src/features/middlewares/basicAuth.middleware.js';
 import { jwtAuth } from './src/features/middlewares/jwt.middleware.js';
+
 
 //create server
 const server = new express();
@@ -20,6 +22,9 @@ server.use('/api/product', jwtAuth,ProductRouter)
 
 //redirect request related to user routes
 server.use('/api/users',UserRouter)
+
+//redirect request  related to cart routes
+server.use('/api/cart',jwtAuth,CartRouter)
 
 
 server.use('/uploads', express.static('uploads'));
